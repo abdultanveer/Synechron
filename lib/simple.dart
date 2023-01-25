@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/widgets/mybutton.dart';
 
     void main(){
       runApp(MaterialApp(
@@ -27,23 +28,34 @@ import 'package:flutter/material.dart';
       Widget build(BuildContext context) {
         return Scaffold(
           appBar: AppBar(
-            title: Text('Home title',),
+            title: Text('Home title',
+            style: TextStyle( fontFamily: 'Handlee'),),
             centerTitle:true,
             backgroundColor: Colors.green,
           ),
           body: Center(
-              child: Text('The button was pushed -- times'+ '$_counter',
-              style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 2.0,
-                color: Colors.red
-              ),)
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text('The button was pushed -- times',
+                    style: TextStyle(
+                        fontFamily: 'Handlee',
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 2.0,
+                        color: Colors.red
+                    ),),
+                  Text('$_counter'),
+                  MyButton(),
+                ],
+
+              ),
+
           ),
           floatingActionButton: FloatingActionButton(
             backgroundColor: Colors.green,
             onPressed: _incrementCounter,
-            child: Text('click me'),
+            child: Icon(Icons.add),
           ),
         );
       }
