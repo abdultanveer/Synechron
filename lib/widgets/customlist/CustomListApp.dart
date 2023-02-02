@@ -19,7 +19,10 @@ class MyApp extends StatelessWidget {
           title: Text('appbar title'),
         ),
         body: ListView.builder(
+
             itemCount: DataSource.items.length,
+            prototypeItem: const ListTile(title: Text(''),
+            subtitle: Text(''),),
             itemBuilder: (context, index) {
               final item = DataSource.items[index];
               return ListTile(
